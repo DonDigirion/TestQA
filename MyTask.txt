@@ -14,7 +14,7 @@ My test work for vacancy Junior QA
 *** Keywords ***
 Holine search
 	[Arguments] 	${searchkey}	${result}
-	Input text 		id=searchbox	${searchkey}
+	Input text 	id=searchbox	${searchkey}
 	Click Button 	id=doSearch	
 	Wait Until Page Contains ${result}
 	Click Link		xpath:/html/body/a[1]
