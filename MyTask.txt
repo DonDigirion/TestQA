@@ -1,0 +1,23 @@
+*** Settings ***
+Library 	Selenium2library
+Suite Setup 	Go to homepage
+Suite Teardown 	Close All Browsers
+
+*** Variables ***
+${HOTLINE}	https://hotline.ua/
+${BROWSER}	Chrome
+${searchkey}	Iphone 7
+
+*** Test Cases ***
+My test work for vacancy Junior QA
+
+*** Keywords ***
+Holine search
+	[Arguments] 	${searchkey}	${result}
+	Input text 		id=searchbox	${searchkey}
+	Click Button 	id=doSearch	
+	Wait Until Page Contains ${result}
+	Click Link		xpath:/html/body/a[1]
+	
+Go to homepage
+	Open Browser	${HOTLINE}	${BROWSER}
